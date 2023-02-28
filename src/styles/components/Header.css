@@ -19,3 +19,23 @@
   text-decoration: none;
   color: #33b1ff;
 }
+
+.move-basquet {
+   transform-origin: top;
+   animation: move-basket 1s ease;
+}
+
+@keyframes move-basket {
+   from {
+      transform: rotateZ(0deg);
+   }
+   33% {
+      transform: rotateZ(-45deg) scale(1.5);
+   }
+   66% {
+      transform: rotateZ(45deg) scale(1.5);
+   }
+   to {
+      transform: rotateZ(0deg) scale(1);
+   }
+}

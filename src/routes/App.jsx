@@ -13,10 +13,10 @@ import AppContext from '../context/AppContext';
 import useInitialState from '../hooks/useInitialState';
 
 export default function App() {
-   const {state: {products}, addToCart, removeFromCart} = useInitialState();
+   const initialState = useInitialState();
 
    return (
-      <AppContext.Provider value="">
+      <AppContext.Provider value={initialState}>
          <BrowserRouter>
             <Layout>
                <Routes>

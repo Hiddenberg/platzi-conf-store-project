@@ -1,4 +1,4 @@
-export default function Product({product}) {
+export default function Product({product, handleAddToCart}) {
    return (
       <div className="Products-item">
          <img src={product.image} alt={product.title} />
@@ -9,7 +9,7 @@ export default function Product({product}) {
             <p>{product.description}</p>
          </div>
 
-         <button type="button">Comprar</button>
+         <button onClick={() => handleAddToCart(product)} type="button">Comprar</button>
       </div>
    );
 }
