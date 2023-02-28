@@ -1,3 +1,8 @@
+import Products from "../components/Products";
+import initialState from "../initialState";
+
 export default function Home() {
-   return <h1>Home</h1>;
+   return (
+      <Products products={initialState.products}/>
+   );
 }
