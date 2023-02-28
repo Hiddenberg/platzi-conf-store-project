@@ -5,23 +5,30 @@ import Information from '../containers/Information';
 import Payment from '../containers/Payment';
 import Success from '../containers/Success';
 import NotFound from '../containers/NotFound';
-
-import "../styles/components/App.css";
 import Layout from '../components/Layout';
 
+import "../styles/components/App.css";
+
+import AppContext from '../context/AppContext';
+import useInitialState from '../hooks/useInitialState';
+
 export default function App() {
+   const {state: {products}, addToCart, removeFromCart} = useInitialState();
+
    return (
-      <BrowserRouter>
-         <Layout>
-            <Routes>
-               <Route exact path="/" element={<Home />} />
-               <Route exact path="/checkout" element={<Checkout />} />
-               <Route exact path="/checkout/information" element={<Information />} />
-               <Route exact path="/checkout/payment" element={<Payment />} />
-               <Route exact path="/checkout/success" element={<Success />} />
-               <Route path="*" element={<NotFound />} />
-            </Routes>
-         </Layout>
-      </BrowserRouter>
+      <AppContext.Provider value="">
+         <BrowserRouter>
+            <Layout>
+               <Routes>
+                  <Route exact path="/" element={<Home />} />
+                  <Route exact path="/checkout" element={<Checkout />} />
+                  <Route exact path="/checkout/information" element={<Information />} />
+                  <Route exact path="/checkout/payment" element={<Payment />} />
+                  <Route exact path="/checkout/success" element={<Success />} />
+                  <Route path="*" element={<NotFound />} />
+               </Routes>
+            </Layout>
+         </BrowserRouter>
+      </AppContext.Provider>
    );
 }
