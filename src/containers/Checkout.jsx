@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../styles/components/Checkout.css";
 
 export default function Checkout() {
@@ -11,13 +12,17 @@ export default function Checkout() {
                   <span>$21</span>
                </div>
 
-               <button type="button">Eliminar</button>
+               <button title="delete item" type="button">
+                  <i className="fas fa-trash-alt" />
+               </button>
             </div>
          </div>
 
          <div className="Checkout-sidebar">
             <h3>Precio total: $21</h3>
-            <button type="button">Continuar pedido</button>
+            <Link to="/checkout/information">
+               <button type="button">Continuar pedido</button>
+            </Link>
          </div>
       </div>
    );
