@@ -27,7 +27,7 @@
 
 @keyframes move-basket {
    from {
-      transform: rotateZ(0deg);
+      transform: rotateZ(0deg) scale(1);
    }
    33% {
       transform: rotateZ(-45deg) scale(1.5);
