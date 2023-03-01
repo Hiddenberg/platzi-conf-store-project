@@ -14,7 +14,7 @@ export default function Basket({cartItemsCount}) {
 
    return (
       <>
-         <i onAnimationEnd={() => setMoving(false)} className={`fas fa-shopping-basket ${moving ? "move-basquet":""}`} />
+         <i onAnimationEnd={() => {setMoving(false)}} className={`fas fa-shopping-basket ${moving ? "move-basquet":""}`} />
          {cartItemsCount > 0 && <div className="Header-alert">{cartItemsCount}</div>}
       </>
    );

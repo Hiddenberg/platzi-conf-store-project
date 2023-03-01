@@ -17,19 +17,18 @@ export default function Checkout() {
                <h3>Sin articulos en el carrito</h3>
             }
             {itemsInCart && 
-               cart.sort((item, prevItem) => item.title > prevItem.title ? 1 : -1)
-                  .map(cartItem => (
-                     <div className="Checkout-item" key={cartItem.cartId}>
-                        <div className="Checkout-element">
-                           <h4>{cartItem.title}</h4>
-                           <span>${cartItem.price}</span>
-                        </div>
-
-                        <button onClick={() => removeFromCart(cartItem)} title="delete item" type="button">
-                           <i className="fas fa-trash-alt" />
-                        </button>
+               cart.map(cartItem => (
+                  <div className="Checkout-item" key={cartItem.cartId}>
+                     <div className="Checkout-element">
+                        <h4>{cartItem.title}</h4>
+                        <span>${cartItem.price}</span>
                      </div>
-                  ))
+
+                     <button onClick={() => removeFromCart(cartItem)} title="delete item" type="button">
+                        <i className="fas fa-trash-alt" />
+                     </button>
+                  </div>
+               ))
             }
          </div>
 
