@@ -22,7 +22,6 @@ export default function Payment() {
    };
 
    const handlePaymetSuccess = (data) => {
-      console.log(data);
       if (data.status === "COMPLETED") {
          /// Create a new order...
          const newOrder = {
