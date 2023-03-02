@@ -24,7 +24,7 @@
        ],
        "import/newline-after-import": "error",
        "react/react-in-jsx-scope": "off",
-       "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
+       "import/no-extraneous-dependencies": "off",
        "indent": ["error", 3],
        "semi": ["error", "always", {"omitLastInOneLineBlock": true}],
        "no-debugger": "warn"

@@ -1,5 +1,5 @@
 import { useRef, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AppContext from "../context/AppContext";
 
 import "../styles/components/Information.css";
@@ -7,6 +7,7 @@ import "../styles/components/Information.css";
 export default function Information() {
    const {state: {cart}, addToBuyer} = useContext(AppContext);
    const formRef = useRef(null);
+   const navigate = useNavigate();
 
    const handleSubmit = () => {
       const formData = new FormData(formRef.current);
@@ -26,8 +27,8 @@ export default function Information() {
       // ↓ A better way to create the buyer object
       const buyer = Object.fromEntries(formData);
 
-      console.log(buyer);
       addToBuyer(buyer);
+      navigate("/checkout/payment");
    };
 
    return (
